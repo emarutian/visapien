@@ -1,0 +1,360 @@
+---
+import '../styles/global.css';
+
+const stats = [
+  {
+    label: 'Implementation confidence',
+    value: '72% report no clear AI start roadmap',
+    description: 'from public SMB adoption trend research',
+  },
+  {
+    label: 'Most common blocker',
+    value: 'Low internal AI capability',
+    description: 'knowledge gaps create slow projects and poor ROI',
+  },
+  {
+    label: 'Commercial impact signal',
+    value: '80%+ SMBs using AI report revenue gains',
+    description: 'when implementation is tied to business outcomes',
+  },
+];
+
+const services = [
+  {
+    title: 'AI strategy for operators',
+    body: 'We map systems, people, and data, then prioritize automation use cases by impact and implementation risk.',
+  },
+  {
+    title: 'Workflow automation',
+    body: 'From intake → CRM → billing → reporting, we remove repetitive work and keep approvals human-first.',
+  },
+  {
+    title: 'Custom solutions',
+    body: 'Bespoke web apps, admin panels, data integrations, and AI copilots that fit your team’s exact operations.',
+  },
+  {
+    title: 'Digital architecture',
+    body: 'Clean stack design, API contracts, observability, and security-by-default foundations for scaling safely.',
+  },
+];
+
+const process = [
+  'Discovery interview: outcome goals, friction map, current systems inventory.',
+  'Blueprint sprint: strategy memo, sequencing, and business case for each initiative.',
+  'Build sprint: automation + custom solution development in short, reviewable cycles.',
+  'Launch & govern: testing, training, playbooks, ownership transfer.',
+];
+
+const icp = [
+  'B2B service firms (20-150 employees) with fragmented tools and growing support demand.',
+  'Retail, operations, legal-adjacent, and advisory teams with repetitive lead-to-delivery workflows.',
+  'Founders scaling from 5-40 people who need reliable operations before headcount spikes.',
+];
+
+const year = new Date().getFullYear();
+const web3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Visapien.com | Strategic AI and Custom Solutions for SMEs</title>
+    <meta
+      name="description"
+      content="Visapien builds technology strategy, AI-first automations, and custom solutions for small and medium businesses focused on predictable growth."
+    />
+    <link rel="canonical" href="https://visapien.com/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:site_name" content="Visapien" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Visapien | AI strategy + custom solutions for SMBs" />
+    <meta
+      property="og:description"
+      content="From strategy to launch: AI-first automations, custom integrations, and practical systems for growing teams."
+    />
+    <meta property="og:url" content="https://visapien.com/" />
+    <meta property="og:image" content="/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Visapien | AI strategy + custom systems for SMBs" />
+    <meta
+      name="twitter:description"
+      content="Technology consulting, automations, and custom product builds for small and medium businesses."
+    />
+    <meta name="twitter:image" content="/og-image.svg" />
+    <meta name="theme-color" content="#15161d" />
+    <script type="application/ld+json" set:html>
+      {JSON.stringify(
+        {
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          name: 'Visapien, inc',
+          url: 'https://visapien.com',
+          description:
+            'Technology consulting, AI-first automations, and custom solution delivery for SMB growth.',
+          areaServed: 'United States',
+        },
+        null,
+        2,
+      )}
+    </script>
+  </head>
+  <body class="bg-surface text-ink antialiased">
+    <main class="relative overflow-hidden">
+      <div class="grain pointer-events-none absolute inset-0 opacity-30"></div>
+
+      <header class="relative z-10 border-b border-[rgba(20,22,29,0.07)]">
+        <div class="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-6 sm:px-6 lg:px-10">
+          <a href="#" class="inline-flex items-center gap-3">
+            <img src="/logo.svg" alt="Visapien logo" class="h-8 w-auto" />
+            <span class="text-sm font-semibold uppercase tracking-[0.22em] text-steel">Visapien</span>
+          </a>
+          <nav class="hidden items-center gap-8 text-sm font-medium text-steel sm:flex">
+            <a href="#services" class="hover:text-ink">Services</a>
+            <a href="#process" class="hover:text-ink">Process</a>
+            <a href="#icp" class="hover:text-ink">Who we help</a>
+          </nav>
+          <a
+            href="#contact"
+            class="rounded-full border border-ink/20 px-5 py-2.5 text-sm font-semibold text-ink transition hover:border-bronze hover:text-bronze"
+          >
+            Talk to Visapien
+          </a>
+        </div>
+      </header>
+
+      <section class="relative z-10">
+        <div class="mx-auto grid max-w-6xl gap-8 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-14 lg:px-10">
+          <div>
+            <p class="text-sm uppercase tracking-[0.22em] text-steel">Technology consulting for SMB growth</p>
+            <h1 class="mt-4 text-4xl font-black leading-tight text-ink sm:text-5xl">
+              Build systems that scale before you hire for every bottleneck.
+            </h1>
+            <p class="mt-6 max-w-xl text-base leading-relaxed text-steel sm:text-lg">
+              Visapien helps small and medium enterprises deploy AI-first automations and custom digital systems with a
+              focus on operations outcomes, not vendor dashboards.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#contact"
+                class="rounded-full bg-ink px-6 py-3 font-semibold text-[#f4f2eb] shadow-panel transition hover:bg-steel"
+              >
+                Start a Strategy Call
+              </a>
+              <a href="#services" class="rounded-full border border-ink/20 px-6 py-3 font-semibold hover:border-bronze hover:text-bronze">
+                Explore Services
+              </a>
+            </div>
+          </div>
+
+          <article class="relative overflow-hidden rounded-3xl border border-[#d8d0c5] bg-card p-8 shadow-panel">
+            <div class="mb-5 overflow-hidden rounded-2xl border border-[#d8d0c5]">
+              <video
+                autoplay
+                muted
+                loop
+                playsinline
+                poster="/media/hero-poster.svg"
+                class="h-60 w-full object-cover"
+              >
+                <source src="/media/hero-video.mp4" type="video/mp4" />
+                <img src="/media/hero-poster.svg" alt="Visapien hero visual" class="h-60 w-full object-cover" />
+              </video>
+            </div>
+            <p class="text-xs uppercase tracking-[0.22em] text-steel">Landing context in practice</p>
+            <p class="mt-4 text-sm leading-relaxed text-steel">
+              Our design is intentionally high-touch and tactile: no fake SaaS gradients, no auto-generated “AI”
+              motifs. Just concrete outcomes, clear architecture, and a brand system that can support both clients and a
+              sales team.
+            </p>
+            <dl class="mt-6 space-y-4">
+              {
+                stats.map((item) => (
+                  <div class="rounded-2xl border border-ink/10 bg-surface/80 p-3">
+                    <dt class="text-xs uppercase tracking-wide text-steel">{item.label}</dt>
+                    <dd class="mt-1 text-sm font-semibold text-ink">{item.value}</dd>
+                    <dd class="mt-1 text-xs text-steel">{item.description}</dd>
+                  </div>
+                ))
+              }
+            </dl>
+          </article>
+        </div>
+      </section>
+
+      <section id="services" class="relative z-10 border-t border-[#d8d0c5] bg-linen/60">
+        <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-10">
+          <p class="text-sm uppercase tracking-[0.22em] text-steel">Services</p>
+          <h2 class="mt-3 text-3xl font-black text-ink">Capabilities</h2>
+          <p class="mt-3 max-w-3xl text-steel">
+            We combine strategy, implementation, and custom engineering so every initiative can be executed and measured.
+          </p>
+          <div class="mt-8 grid gap-4 sm:grid-cols-2">
+            {
+              services.map((service) => (
+                <article class="rounded-3xl border border-[#ddd4c8] bg-card p-6 shadow-panel">
+                  <h3 class="text-xl font-bold text-ink">{service.title}</h3>
+                  <p class="mt-4 text-steel">{service.body}</p>
+                </article>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <section id="process" class="relative z-10">
+        <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-10">
+          <p class="text-sm uppercase tracking-[0.22em] text-steel">How we work</p>
+          <h2 class="mt-3 text-3xl font-black text-ink">A practical path from concept to production</h2>
+          <div class="mt-8 grid gap-4 sm:grid-cols-2">
+            {
+              process.map((item, index) => (
+                <article class="rounded-2xl border border-[#ddd4c8] bg-card p-6">
+                  <p class="text-xs font-semibold uppercase tracking-[0.16em] text-steel">Step {index + 1}</p>
+                  <p class="mt-4 text-ink">{item}</p>
+                </article>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <section id="icp" class="relative z-10 border-t border-[#d8d0c5] bg-linen/70">
+        <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-10">
+          <div class="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-start">
+            <div>
+              <p class="text-sm uppercase tracking-[0.22em] text-steel">Who we help</p>
+              <h2 class="mt-3 text-3xl font-black text-ink">Ideal Customer Profile</h2>
+              <p class="mt-4 text-steel">
+                Teams that are ready to stop “pilot mode AI” and start systems mode. If your team:
+              </p>
+              <ul class="mt-6 space-y-3 text-ink">
+                {
+                  icp.map((item) => (
+                    <li class="rounded-xl border border-[#ddd4c8] bg-card px-4 py-3">• {item}</li>
+                  ))
+                }
+              </ul>
+            </div>
+            <div class="rounded-3xl border border-[#ddd4c8] bg-card p-8">
+              <p class="text-sm uppercase tracking-[0.22em] text-steel">Our UVP</p>
+              <h3 class="mt-3 text-2xl font-black text-ink">Built-in growth discipline</h3>
+              <p class="mt-4 text-steel">
+                We don’t sell “AI tools.” We build outcomes. Every recommendation is anchored to a measurable business
+                metric, a realistic rollout path, and the team that will maintain it.
+              </p>
+              <p class="mt-4 text-ink font-semibold">
+                Result: fewer fragmented experiments, more reliable operations, faster value realization.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="relative z-10 border-y border-[#d8d0c5] bg-ink text-[#f4f2eb]">
+        <div class="mx-auto max-w-6xl px-4 py-16 text-center sm:px-6 lg:px-10">
+          <p class="text-xs uppercase tracking-[0.22em] text-[#b9ab95]">Get started</p>
+          <h2 class="mt-3 text-4xl font-black">If you need one reliable systems path, we can build it.</h2>
+          <p class="mx-auto mt-4 max-w-2xl text-[#cfc2ac]">
+            If operations are currently patchwork—Slack, spreadsheets, and duplicate tools—this is your starting point.
+          </p>
+          <div class="mt-7 flex flex-wrap justify-center gap-3">
+            {
+              web3FormsKey ? (
+                <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="mx-auto mt-6 max-w-xl space-y-4 text-left">
+                  <input type="hidden" name="access_key" value={web3FormsKey} />
+                  <input type="hidden" name="subject" value="New Visapien contact inquiry" />
+                  <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" />
+                  <div class="grid gap-3 sm:grid-cols-2">
+                    <label class="text-left">
+                      <span class="text-xs uppercase tracking-[0.16em] text-[#b9ab95]">Name</span>
+                      <input
+                        name="name"
+                        required
+                        class="mt-1 w-full rounded-xl border border-[#3a3d49] bg-[#1d2030] px-3 py-2 text-sm text-white"
+                      />
+                    </label>
+                    <label class="text-left">
+                      <span class="text-xs uppercase tracking-[0.16em] text-[#b9ab95]">Email</span>
+                      <input
+                        type="email"
+                        name="email"
+                        required
+                        class="mt-1 w-full rounded-xl border border-[#3a3d49] bg-[#1d2030] px-3 py-2 text-sm text-white"
+                      />
+                    </label>
+                  </div>
+                  <label class="text-left">
+                    <span class="text-xs uppercase tracking-[0.16em] text-[#b9ab95]">Company</span>
+                    <input
+                      name="company"
+                      class="mt-1 w-full rounded-xl border border-[#3a3d49] bg-[#1d2030] px-3 py-2 text-sm text-white"
+                    />
+                  </label>
+                  <label class="text-left">
+                    <span class="text-xs uppercase tracking-[0.16em] text-[#b9ab95]">Message</span>
+                    <textarea
+                      name="message"
+                      required
+                      rows="4"
+                      class="mt-1 w-full rounded-xl border border-[#3a3d49] bg-[#1d2030] px-3 py-2 text-sm text-white"
+                    ></textarea>
+                  </label>
+                  <div class="text-center">
+                    <button
+                      type="submit"
+                      class="rounded-full border border-white/20 px-7 py-3 font-bold hover:border-[#8b6a45] hover:bg-[#25293a]"
+                    >
+                      Send request
+                    </button>
+                  </div>
+                  <p id="form-status" class="text-center text-sm text-[#f4f2eb]"></p>
+                </form>
+              ) : (
+                <div class="mx-auto mt-6 max-w-md rounded-xl border border-[#3a3d49] bg-[#1d2030] px-5 py-4 text-sm text-[#b9ab95]">
+                  Contact form is waiting for Web3Forms key. Add
+                  <span class="font-semibold text-[#e2d5bf]"> PUBLIC_WEB3FORMS_ACCESS_KEY</span> in env to enable delivery.
+                </div>
+              )
+            }
+            <a href="#services" class="rounded-full bg-bronze px-7 py-3 font-bold text-ink">Download scope brief</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="border-t border-[#ddd4c8] bg-card py-6 text-center text-xs text-steel">
+      © {year} Visapien, inc. All rights reserved.
+    </footer>
+    <script is:inline>
+      const form = document.getElementById('contact-form');
+      const status = document.getElementById('form-status');
+      if (form) {
+        form.addEventListener('submit', async (event) => {
+          event.preventDefault();
+          if (!status) return;
+          const formData = new FormData(form);
+          status.textContent = 'Submitting...';
+          try {
+            const response = await fetch(form.action, {
+              method: 'POST',
+              body: formData,
+              headers: {
+                Accept: 'application/json',
+              },
+            });
+            if (response.ok) {
+              status.textContent = 'Thanks — your message is on the way.';
+              form.reset();
+            } else {
+              const data = await response.json();
+              status.textContent = `Could not send: ${data.message || 'try again.'}`;
+            }
+          } catch (error) {
+            status.textContent = 'Network issue while submitting. Please try again shortly.';
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
