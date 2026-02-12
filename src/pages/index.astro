@@ -148,14 +148,49 @@ const web3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '';
             </div>
           </div>
 
-          <article class="relative overflow-hidden rounded-3xl border border-[#d8d0c5] bg-card p-8 shadow-panel">
+            <article class="relative overflow-hidden rounded-3xl border border-[#d8d0c5] bg-card p-8 shadow-panel">
             <div class="mb-5 overflow-hidden rounded-2xl border border-[#d8d0c5]">
-              <img
-                src="/media/hero-bg-1.webp"
-                alt="Visapien team collaborating on AI-first systems"
-                class="h-60 w-full object-cover"
-                onerror="this.onerror=null;this.src='/media/hero-poster.svg';"
-              />
+              <svg viewBox="0 0 1600 900" class="h-60 w-full" role="img" aria-label="Visapien strategy visual">
+                <defs>
+                  <pattern
+                    id="grain"
+                    x="0"
+                    y="0"
+                    width="12"
+                    height="12"
+                    patternUnits="userSpaceOnUse"
+                  >
+                    <path
+                      d="M1 1h1v1H1V1Zm6 0h1v1H7V1Zm6 0h1v1h-1V1Zm0 6h1v1h-1v-1Zm-6 0h1v1H7v-1Zm-6 0h1v1H1V7Z"
+                      fill="#d4cab7"
+                      stroke="none"
+                    />
+                  </pattern>
+                </defs>
+                <rect width="1600" height="900" fill="#f3ede6"/>
+                <rect x="0" y="0" width="1600" height="900" fill="url(#grain)" opacity="0.6" />
+                <rect x="110" y="130" width="520" height="420" rx="28" fill="#15161d"/>
+                <text
+                  x="720"
+                  y="260"
+                  fill="#14161d"
+                  font-family="Inter, Arial, sans-serif"
+                  font-size="56"
+                  font-weight="700"
+                >
+                  Visapien Strategy Works
+                </text>
+                <text
+                  x="720"
+                  y="350"
+                  fill="#3b3f4c"
+                  font-family="Inter, Arial, sans-serif"
+                  font-size="30"
+                  font-weight="600"
+                >
+                  AI-first systems for SMB growth
+                </text>
+              </svg>
             </div>
             <p class="text-xs uppercase tracking-[0.22em] text-steel">Landing context in practice</p>
             <p class="mt-4 text-sm leading-relaxed text-steel">
