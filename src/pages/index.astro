@@ -150,17 +150,12 @@ const web3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '';
 
           <article class="relative overflow-hidden rounded-3xl border border-[#d8d0c5] bg-card p-8 shadow-panel">
             <div class="mb-5 overflow-hidden rounded-2xl border border-[#d8d0c5]">
-              <video
-                autoplay
-                muted
-                loop
-                playsinline
-                poster="/media/hero-poster.svg"
+              <img
+                src="/media/hero-bg-1.webp"
+                alt="Visapien team collaborating on AI-first systems"
                 class="h-60 w-full object-cover"
-              >
-                <source src="/media/hero-video.mp4" type="video/mp4" />
-                <img src="/media/hero-poster.svg" alt="Visapien hero visual" class="h-60 w-full object-cover" />
-              </video>
+                onerror="this.onerror=null;this.src='/media/hero-poster.svg';"
+              />
             </div>
             <p class="text-xs uppercase tracking-[0.22em] text-steel">Landing context in practice</p>
             <p class="mt-4 text-sm leading-relaxed text-steel">
