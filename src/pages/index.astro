@@ -289,18 +289,38 @@ const web3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '';
           <p class="mx-auto mt-4 max-w-2xl text-[#cfc2ac]">
             If operations are currently patchwork—Slack, spreadsheets, and duplicate tools—this is your starting point.
           </p>
-          <div class="mt-7 flex flex-wrap justify-center gap-3">
+          <div class="mt-7">
             {
               web3FormsKey ? (
                 <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="mx-auto mt-6 max-w-xl space-y-4 text-left">
                   <input type="hidden" name="access_key" value={web3FormsKey} />
                   <input type="hidden" name="subject" value="New Visapien contact inquiry" />
+                  <input type="hidden" name="from_name" value="Visapien Website Form" />
                   <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" />
                   <div class="grid gap-3 sm:grid-cols-2">
                     <label class="text-left">
-                      <span class="text-xs uppercase tracking-[0.16em] text-[#b9ab95]">Name</span>
+                      <span class="text-xs uppercase tracking-[0.16em] text-[#b9ab95]">First Name</span>
                       <input
-                        name="name"
+                        name="first_name"
+                        required
+                        class="mt-1 w-full rounded-xl border border-[#3a3d49] bg-[#1d2030] px-3 py-2 text-sm text-white"
+                      />
+                    </label>
+                    <label class="text-left">
+                      <span class="text-xs uppercase tracking-[0.16em] text-[#b9ab95]">Last Name</span>
+                      <input
+                        name="last_name"
+                        required
+                        class="mt-1 w-full rounded-xl border border-[#3a3d49] bg-[#1d2030] px-3 py-2 text-sm text-white"
+                      />
+                    </label>
+                  </div>
+                  <div class="grid gap-3 sm:grid-cols-2">
+                    <label class="text-left">
+                      <span class="text-xs uppercase tracking-[0.16em] text-[#b9ab95]">Phone</span>
+                      <input
+                        type="tel"
+                        name="phone"
                         required
                         class="mt-1 w-full rounded-xl border border-[#3a3d49] bg-[#1d2030] px-3 py-2 text-sm text-white"
                       />
@@ -316,9 +336,9 @@ const web3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '';
                     </label>
                   </div>
                   <label class="text-left">
-                    <span class="text-xs uppercase tracking-[0.16em] text-[#b9ab95]">Company</span>
+                    <span class="text-xs uppercase tracking-[0.16em] text-[#b9ab95]">Business Name</span>
                     <input
-                      name="company"
+                      name="business_name"
                       class="mt-1 w-full rounded-xl border border-[#3a3d49] bg-[#1d2030] px-3 py-2 text-sm text-white"
                     />
                   </label>
@@ -331,6 +351,36 @@ const web3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '';
                       class="mt-1 w-full rounded-xl border border-[#3a3d49] bg-[#1d2030] px-3 py-2 text-sm text-white"
                     ></textarea>
                   </label>
+                  <div class="space-y-3 rounded-xl border border-[#3a3d49] bg-[#1a1d2a] p-4">
+                    <p class="text-xs text-[#d2c7b4]">
+                      Entering a phone number alone does not grant permission to send SMS messages. Consent must be
+                      collected explicitly using the checkboxes below.
+                    </p>
+                    <label class="flex items-start gap-3 text-xs text-[#d2c7b4]">
+                      <input type="checkbox" name="sms_consent_transactional" value="yes" class="mt-0.5 h-4 w-4 rounded border-[#6a6d7a] bg-[#1d2030]" />
+                      <span>
+                        I consent to receive transactional SMS messages from Visapien, inc at the number provided
+                        (alerts, reminders, and service updates). Message frequency may vary. Message and data rates
+                        may apply. Reply HELP for help and STOP to opt out.
+                      </span>
+                    </label>
+                    <label class="flex items-start gap-3 text-xs text-[#d2c7b4]">
+                      <input type="checkbox" name="sms_consent_marketing" value="yes" class="mt-0.5 h-4 w-4 rounded border-[#6a6d7a] bg-[#1d2030]" />
+                      <span>
+                        I consent to receive marketing and promotional SMS messages from Visapien, inc at the number
+                        provided. Message frequency may vary. Message and data rates may apply. Reply HELP for help
+                        and STOP to opt out.
+                      </span>
+                    </label>
+                    <p class="text-[11px] leading-relaxed text-[#b9ab95]">
+                      By submitting, you agree to our
+                      <a href="/privacy" class="underline underline-offset-2">Privacy Policy</a>
+                      and
+                      <a href="/terms" class="underline underline-offset-2">Terms of Service</a>.
+                      SMS consent is not shared with third parties except messaging providers needed to deliver the
+                      service.
+                    </p>
+                  </div>
                   <div class="text-center">
                     <button
                       type="submit"
@@ -348,7 +398,11 @@ const web3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '';
                 </div>
               )
             }
-            <a href="#services" class="rounded-full bg-bronze px-7 py-3 font-bold text-ink">Download scope brief</a>
+            <div class="mt-6 text-center">
+              <a href="#services" class="inline-flex rounded-full bg-bronze px-7 py-3 font-bold text-ink">
+                Download scope brief
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -364,6 +418,10 @@ const web3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '';
           event.preventDefault();
           if (!status) return;
           const formData = new FormData(form);
+          const transactionalOptIn = form.querySelector('input[name="sms_consent_transactional"]');
+          const marketingOptIn = form.querySelector('input[name="sms_consent_marketing"]');
+          formData.set('sms_consent_transactional', transactionalOptIn?.checked ? 'yes' : 'no');
+          formData.set('sms_consent_marketing', marketingOptIn?.checked ? 'yes' : 'no');
           status.textContent = 'Submitting...';
           try {
             const response = await fetch(form.action, {
