@@ -53,6 +53,8 @@ const icp = [
 
 const year = new Date().getFullYear();
 const web3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '';
+const heroImage = '/media/hero-bg-1.webp';
+const heroImageFallback = '/media/hero-poster.svg';
 ---
 
 <!doctype html>
@@ -149,48 +151,24 @@ const web3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '';
           </div>
 
             <article class="relative overflow-hidden rounded-3xl border border-[#d8d0c5] bg-card p-8 shadow-panel">
-            <div class="mb-5 overflow-hidden rounded-2xl border border-[#d8d0c5]">
-              <svg viewBox="0 0 1600 900" class="h-60 w-full" role="img" aria-label="Visapien strategy visual">
-                <defs>
-                  <pattern
-                    id="grain"
-                    x="0"
-                    y="0"
-                    width="12"
-                    height="12"
-                    patternUnits="userSpaceOnUse"
-                  >
-                    <path
-                      d="M1 1h1v1H1V1Zm6 0h1v1H7V1Zm6 0h1v1h-1V1Zm0 6h1v1h-1v-1Zm-6 0h1v1H7v-1Zm-6 0h1v1H1V7Z"
-                      fill="#d4cab7"
-                      stroke="none"
-                    />
-                  </pattern>
-                </defs>
-                <rect width="1600" height="900" fill="#f3ede6"/>
-                <rect x="0" y="0" width="1600" height="900" fill="url(#grain)" opacity="0.6" />
-                <rect x="110" y="130" width="520" height="420" rx="28" fill="#15161d"/>
-                <text
-                  x="720"
-                  y="260"
-                  fill="#14161d"
-                  font-family="Inter, Arial, sans-serif"
-                  font-size="56"
-                  font-weight="700"
-                >
-                  Visapien Strategy Works
-                </text>
-                <text
-                  x="720"
-                  y="350"
-                  fill="#3b3f4c"
-                  font-family="Inter, Arial, sans-serif"
-                  font-size="30"
-                  font-weight="600"
-                >
-                  AI-first systems for SMB growth
-                </text>
-              </svg>
+            <div class="mb-5 overflow-hidden rounded-2xl border border-[#d8d0c5] bg-[#f1ece4]">
+              <img
+                src={heroImage}
+                alt="Visapien team planning AI-driven operations strategy"
+                loading="eager"
+                class="h-60 w-full object-cover"
+                onerror="
+                  this.onerror = null;
+                  this.style.display = 'none';
+                  const fallback = this.nextElementSibling;
+                  if (fallback) fallback.classList.remove('hidden');
+                "
+              />
+              <img
+                src={heroImageFallback}
+                alt="Visapien strategy visual"
+                class="hidden h-60 w-full"
+              />
             </div>
             <p class="text-xs uppercase tracking-[0.22em] text-steel">Landing context in practice</p>
             <p class="mt-4 text-sm leading-relaxed text-steel">
@@ -398,17 +376,16 @@ const web3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '';
                 </div>
               )
             }
-            <div class="mt-6 text-center">
-              <a href="#services" class="inline-flex rounded-full bg-bronze px-7 py-3 font-bold text-ink">
-                Download scope brief
-              </a>
-            </div>
           </div>
         </div>
       </section>
     </main>
     <footer class="border-t border-[#ddd4c8] bg-card py-6 text-center text-xs text-steel">
-      © {year} Visapien, inc. All rights reserved.
+      <div class="space-x-4">
+        <a href="/privacy" class="underline underline-offset-4">Privacy</a>
+        <a href="/terms" class="underline underline-offset-4">Terms</a>
+      </div>
+      <p class="mt-2">© {year} Visapien, inc. All rights reserved.</p>
     </footer>
     <script is:inline>
       const form = document.getElementById('contact-form');
