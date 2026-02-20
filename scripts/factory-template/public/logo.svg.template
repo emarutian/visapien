@@ -1,0 +1,11 @@
+<svg width="920" height="220" viewBox="0 0 920 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="920" height="220" rx="40" fill="#15161D"/>
+  <rect x="14" y="14" width="192" height="192" rx="26" fill="#EEDCC9" opacity="0.9"/>
+  <path d="M54 112L88 44L118 44L152 112L124 112L119 100H97L92 112H54Z" fill="#15161D"/>
+  <circle cx="103" cy="144" r="24" fill="#A97A3F"/>
+  <path d="M168 44H192V176H168V44Z" fill="#15161D"/>
+  <path d="M220 44H246V164C246 181.121 260.879 196 278 196H304V176H286C278.268 176 272 169.732 272 162V44H220Z" fill="#15161D"/>
+  <text x="350" y="144" fill="#EEDCC9" font-family="Syne, Arial, sans-serif" font-size="72" font-weight="700" letter-spacing="0.06em">
+    {{COMPANY_NAME}}
+  </text>
+</svg>

@@ -1,0 +1,52 @@
+# {{COMPANY_NAME}} website
+
+Generated with the website factory.
+
+## 1) Install and run
+
+```bash
+bun install
+bun run dev
+```
+
+Open `http://localhost:4321`.
+
+## 2) Configure
+
+- Add `PUBLIC_WEB3FORMS_ACCESS_KEY` in `.env` (or `.env.local`) for contact form delivery.
+- Add email destination in your Web3Forms dashboard for submissions.
+- Optionally add `RUNWARE_API_KEY` and run `bun run media:images` to refresh hero media.
+
+## 3) Deploy (auto deploy from GitHub + Vercel)
+
+1. Push this repo to GitHub.
+2. Link project in Vercel with "Git Integration".
+3. Add these repo secrets for GitHub Action workflow:
+   - `VERCEL_TOKEN`
+   - `VERCEL_ORG_ID`
+   - `VERCEL_PROJECT_ID`
+4. Push to `main`. Deployment runs automatically through GitHub Action.
+
+## 4) Domain via Cloudflare (factory skill)
+
+```bash
+export CLOUDFLARE_API_TOKEN=...
+export CLOUDFLARE_ZONE_ID=...
+export ROOT_DOMAIN={{DOMAIN}}
+export VERCEL_IPV4=76.76.21.21
+bun run scripts/setup-cloudflare-domain.mjs
+```
+
+Then add `{{DOMAIN}}` and `www.{{DOMAIN}}` to your Vercel project domain settings.
+
+## 5) Included assets
+
+- `src/pages/index.astro`
+- `src/pages/privacy.astro`
+- `src/pages/terms.astro`
+- `scripts/generate-runware-media.mjs`
+- `.github/workflows/deploy.yml`
+- `scripts/setup-cloudflare-domain.mjs`
+- `public/og-image.svg`, `public/favicon.svg`, `public/logo.svg`
+
+---

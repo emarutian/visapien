@@ -1,0 +1,19 @@
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const missing = [];
+if (!process.env.RUNWARE_API_KEY) {
+  missing.push('RUNWARE_API_KEY');
+}
+if (!process.env.RUNWARE_API_URL) {
+  missing.push('RUNWARE_API_URL');
+}
+
+if (missing.length) {
+  console.error('Runware env is missing:', missing.join(', '));
+  console.error('Add these in .env before running generation.');
+  process.exit(1);
+}
+
+console.log('Runware environment check: OK');

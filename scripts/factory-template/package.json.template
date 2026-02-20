@@ -1,6 +1,5 @@
 {
-  "name": "visapien",
-  "version": "0.1.0",
+  "name": "{{COMPANY_SLUG}}",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,7 +7,6 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "factory": "bun run scripts/website-factory.mjs",
     "check:env": "bun run scripts/check-runware-env.mjs",
     "media:images": "bun run scripts/generate-runware-media.mjs images",
     "media:video": "bun run scripts/generate-runware-media.mjs video",

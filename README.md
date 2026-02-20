@@ -97,3 +97,30 @@ After DNS propagation, open `https://www.talaxy.ai` and `https://visapien.com` t
 The media generator defaults to `bytedance:seedance@2` and falls back to `bytedance:1@1`.
 If your Runware account does not expose a Seedance 2 model yet, keep
 `RUNWARE_VIDEO_MODEL=bytedance:1@1` temporarily until availability is confirmed.
+
+## 9) Website factory plugin
+
+Use `scripts/website-factory.mjs` to generate a new complete website from a prompt.
+
+```bash
+bun run factory --help
+bun run factory "technology consulting and automation partner for SMB teams"
+```
+
+Options:
+- `--company "Acme, Inc"`: brand name
+- `--domain acme.com`: sets SEO canonical/domain metadata
+- `--output ./generated/acme`: output folder
+- `--web3forms-key ...`: enables contact form submit key in generated `.env.example`
+- `--runware-key ...`: generate hero image with Runware immediately
+- `--include-cloudflare`: auto-sync root and `www` DNS records using Cloudflare API
+- `--cloudflare-token`, `--cloudflare-zone-id`: required with `--include-cloudflare`
+- `--run-media` or `--skip-media`: control media generation
+- `--write-env`: writes resolved keys into generated `.env` for immediate bootstrapping
+
+Generated project includes:
+- turn-key pages (`index`, `privacy`, `terms`)
+- runware media script and validator
+- web3forms contact handling
+- Vercel deployment workflow and `vercel.json`
+- Cloudflare DNS sync helper (`scripts/setup-cloudflare-domain.mjs`)

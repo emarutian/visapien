@@ -1,0 +1,52 @@
+---
+import '../styles/global.css';
+const year = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Terms of Service | {{COMPANY_NAME}}</title>
+    <meta
+      name="description"
+      content="Terms of service for {{COMPANY_NAME}} website use and communication."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href="https://{{DOMAIN}}/terms" />
+  </head>
+  <body class="bg-surface text-ink antialiased">
+    <main class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+      <a href="/" class="text-sm font-semibold text-steel underline underline-offset-4">Back to home</a>
+      <h1 class="mt-4 text-4xl font-black">Terms of Service</h1>
+      <p class="mt-2 text-sm text-steel">Effective date: {{YEAR}}</p>
+
+      <section class="mt-8 space-y-4 rounded-2xl border border-[#d8d0c5] bg-card p-6">
+        <h2 class="text-2xl font-bold">1. Use of site</h2>
+        <p>You agree to use this site lawfully and not disrupt normal operations.</p>
+      </section>
+
+      <section class="mt-6 space-y-4 rounded-2xl border border-[#d8d0c5] bg-card p-6">
+        <h2 class="text-2xl font-bold">2. Inquiry and engagement</h2>
+        <p>Submitting the contact form starts an inquiry only. Engagement begins only after a mutually signed agreement.</p>
+      </section>
+
+      <section class="mt-6 space-y-4 rounded-2xl border border-[#d8d0c5] bg-card p-6">
+        <h2 class="text-2xl font-bold">3. Communications and SMS</h2>
+        <p><strong>{{COMPANY_NAME}}</strong> may send SMS messages related to {{SMS_DESCRIPTION}}, including appointment reminders, service updates, and promotional offers where consent is provided. Transactional and marketing SMS opt-ins are separate and optional. Message frequency may vary, and message and data rates may apply.</p>
+        <p>You can cancel the SMS service at any time. Just text <strong>"STOP"</strong> to <strong>{{PHONE_NUMBER}}</strong>. After you send the SMS message "STOP" to us, we will send you an SMS message to confirm that you have been unsubscribed. After this, you will no longer receive SMS messages from us. If you want to join again, just sign up as you did the first time and we will start sending SMS messages to you again.</p>
+        <p>If you are experiencing issues with the messaging program, you can reply with the keyword <strong>HELP</strong> for more assistance, or you can get help directly at <a href="mailto:{{CONTACT_EMAIL}}" class="underline underline-offset-4">{{CONTACT_EMAIL}}</a>.</p>
+        <p>Carriers are not liable for delayed or undelivered messages.</p>
+      </section>
+
+      <section class="mt-6 space-y-4 rounded-2xl border border-[#d8d0c5] bg-card p-6">
+        <h2 class="text-2xl font-bold">4. Contact</h2>
+        <p>{{CONTACT_EMAIL}}</p>
+      </section>
+    </main>
+    <footer class="border-t border-[#ddd4c8] bg-card py-6 text-center text-xs text-steel">
+      © {year} {{COMPANY_NAME}}. All rights reserved.
+    </footer>
+  </body>
+</html>

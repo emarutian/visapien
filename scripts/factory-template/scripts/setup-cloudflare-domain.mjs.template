@@ -1,0 +1,74 @@
+const token = process.env.CLOUDFLARE_API_TOKEN || '';
+const zoneId = process.env.CLOUDFLARE_ZONE_ID || '';
+const domain = process.env.ROOT_DOMAIN || '';
+const ipv4 = process.env.VERCEL_IPV4 || '76.76.21.21';
+const ttl = Number(process.env.CLOUDFLARE_TTL || '300');
+
+if (!token || !zoneId || !domain) {
+  console.error('Missing required environment variables.');
+  console.error('Set: CLOUDFLARE_API_TOKEN, CLOUDFLARE_ZONE_ID, ROOT_DOMAIN');
+  process.exit(1);
+}
+
+const apiBase = `https://api.cloudflare.com/client/v4/zones/${zoneId}/dns_records`;
+const headers = {
+  Authorization: `Bearer ${token}`,
+  'Content-Type': 'application/json',
+};
+
+async function request(pathname, options = {}) {
+  const url = `${apiBase}${pathname}`;
+  const response = await fetch(url, {
+    method: options.method || 'GET',
+    headers,
+    body: options.body ? JSON.stringify(options.body) : undefined,
+  });
+
+  const payload = await response.json();
+  if (!response.ok || !payload.success) {
+    throw new Error(`Cloudflare API ${response.status}: ${JSON.stringify(payload, null, 2)}`);
+  }
+  return payload.result;
+}
+
+function fullName(name) {
+  return name === '@' ? domain : `${name}.${domain}`;
+}
+
+async function findRecord(type, name) {
+  const encoded = encodeURIComponent(fullName(name));
+  const found = await request(`?type=${type}&name=${encoded}`);
+  return found[0];
+}
+
+async function upsertRecord(type, name, content) {
+  const existing = await findRecord(type, name);
+  const record = {
+    type,
+    name,
+    content,
+    ttl,
+    proxied: false,
+    comment: 'Created by website factory',
+  };
+
+  if (existing?.id) {
+    await request(`/${existing.id}`, {
+      method: 'PATCH',
+      body: { ...record },
+    });
+    console.log(`Updated ${type} ${fullName(name)} -> ${content}`);
+    return;
+  }
+
+  await request('', {
+    method: 'POST',
+    body: record,
+  });
+  console.log(`Created ${type} ${fullName(name)} -> ${content}`);
+}
+
+await upsertRecord('A', '@', ipv4);
+await upsertRecord('CNAME', 'www', 'cname.vercel-dns.com');
+console.log('Cloudflare DNS upsert complete.');
+console.log('Next: attach your custom domain in Vercel project settings.');

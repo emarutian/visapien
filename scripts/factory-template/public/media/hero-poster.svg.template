@@ -1,0 +1,15 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#f3ede6"/>
+  <rect x="0" y="0" width="1600" height="900" fill="url(#grain)" opacity="0.6" />
+  <rect x="120" y="130" width="520" height="420" rx="28" fill="#15161D"/>
+  <path d="M188 278L233 180H282L326 278H280L272 262H240L232 278H188Z" fill="#f3ede6"/>
+  <circle cx="282" cy="338" r="52" fill="#A97A3F"/>
+  <path d="M372 180H418V382C418 403.539 435.461 421 457 421H479V371H461C453.268 371 447 364.732 447 357V180H372V180Z" fill="#f3ede6"/>
+  <text x="720" y="260" fill="#15161D" font-family="Syne, Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="0.05em">{{COMPANY_NAME}} Strategy Works</text>
+  <text x="720" y="345" fill="#3b3f4c" font-family="Manrope, Arial, sans-serif" font-size="34" font-weight="600">AI-first workflow, strategy, and custom systems.</text>
+  <defs>
+    <pattern id="grain" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
+      <path d="M1 1h1v1H1V1Zm6 0h1v1H7V1Zm6 0h1v1h-1V1Zm0 6h1v1h-1v-1Zm-6 0h1v1H7v-1Zm-6 0h1v1H1V7Z" fill="#d4cab7" stroke="none" />
+    </pattern>
+  </defs>
+</svg>

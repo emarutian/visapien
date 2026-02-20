@@ -1,0 +1,64 @@
+---
+import '../styles/global.css';
+const year = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy | {{COMPANY_NAME}}</title>
+    <meta
+      name="description"
+      content="Privacy policy for {{COMPANY_NAME}} website inquiries and communication preferences."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href="https://{{DOMAIN}}/privacy" />
+  </head>
+  <body class="bg-surface text-ink antialiased">
+    <main class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+      <a href="/" class="text-sm font-semibold text-steel underline underline-offset-4">Back to home</a>
+      <h1 class="mt-4 text-4xl font-black">Privacy Policy</h1>
+      <p class="mt-2 text-sm text-steel">Effective date: {{YEAR}}</p>
+
+      <section class="mt-8 space-y-4 rounded-2xl border border-[#d8d0c5] bg-card p-6">
+        <h2 class="text-2xl font-bold">1. Information we collect</h2>
+        <p>
+          On contact requests we may collect name, phone number, email address, business name, message content, and SMS consent choices.
+        </p>
+      </section>
+
+      <section class="mt-6 space-y-4 rounded-2xl border border-[#d8d0c5] bg-card p-6">
+        <h2 class="text-2xl font-bold">2. Purpose and processing</h2>
+        <p>
+          We use data to reply to enquiries, provide consulting scope, send operational updates, and process optional SMS messages when you opt in.
+        </p>
+      </section>
+
+      <section class="mt-6 space-y-4 rounded-2xl border border-[#d8d0c5] bg-card p-6">
+        <h2 class="text-2xl font-bold">3. SMS consent</h2>
+        <p>SMS consent is collected through explicit, optional checkboxes and is not inferred from phone number collection alone. By opting in, you may receive SMS messages from <strong>{{COMPANY_NAME}}</strong> related to {{SMS_DESCRIPTION}}, including appointment reminders, service updates, and promotional offers. Message frequency may vary. Message and data rates may apply.</p>
+        <p>You can cancel the SMS service at any time by texting <strong>"STOP"</strong> to <strong>{{PHONE_NUMBER}}</strong>. After unsubscribing, we will send a confirmation message and you will no longer receive SMS messages from us. You may re-subscribe at any time by signing up again through our contact form.</p>
+        <p>For help with the messaging program, reply <strong>HELP</strong> or contact us at <a href="mailto:{{CONTACT_EMAIL}}" class="underline underline-offset-4">{{CONTACT_EMAIL}}</a>.</p>
+        <p>Carriers are not liable for delayed or undelivered messages.</p>
+        <p>SMS consent information is not shared with third parties except messaging service providers necessary for message delivery.</p>
+      </section>
+
+      <section class="mt-6 space-y-4 rounded-2xl border border-[#d8d0c5] bg-card p-6">
+        <h2 class="text-2xl font-bold">4. Sharing</h2>
+        <p>We do not sell personal information. We only share as required to operate form delivery and communication providers.</p>
+      </section>
+
+      <section class="mt-6 space-y-4 rounded-2xl border border-[#d8d0c5] bg-card p-6">
+        <h2 class="text-2xl font-bold">5. Contact</h2>
+        <p>
+          Contact {{CONTACT_EMAIL}} for privacy questions.
+        </p>
+      </section>
+    </main>
+    <footer class="border-t border-[#ddd4c8] bg-card py-6 text-center text-xs text-steel">
+      © {year} {{COMPANY_NAME}}. All rights reserved.
+    </footer>
+  </body>
+</html>
